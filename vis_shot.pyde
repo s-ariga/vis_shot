@@ -47,7 +47,7 @@ background('#FFF9E5')
 
     
 shots = []
-with open('shot-data.csv', 'r') as f:
+with open('ai-nagatoro-20190811-S.csv', 'r') as f:
     header = f.readline()
     shots = f.readlines()
 
@@ -55,10 +55,11 @@ coords = []
 for shot in shots:
     coords.append(shot.rstrip('\n').split(','))
     
-coords = [[float(coord[0]), float(coord[1])] for coord in coords]
+coords = [[float(coord[8]), float(coord[9])] for coord in coords]
 
 print(coords)
-#image(img,0,0)
+
+image(img,0,0)
 put_shot(coords)
-line_shots(coords)
+#line_shots(coords)
 print(len(coords))    
